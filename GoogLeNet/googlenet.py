@@ -1,12 +1,6 @@
-import numpy as np
-import matplotlib.pyplot as plt
 import torch
 import torch.nn as nn
-import torch.optim as optim
-from torch.utils.data import DataLoader, Dataset, random_split
-from torchvision import transforms, datasets
-from test.test_operator import Seq1
-from re import Match
+
 
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
@@ -91,8 +85,6 @@ class GoogLeNet(nn.Module):
     self.inception3A = Inception(in_channels=192, num1x1=64, num3x3_reduce=96, num3x3=128, num5x5_reduce=16, num5x5=32, pool_proj=32)
     self.inception3B = Inception(in_channels=256, num1x1=128, num3x3_reduce=128, num3x3=192, num5x5_reduce=32, num5x5=96, pool_proj=64)
     self.pool4 = nn.MaxPool2d(3, stride=2, padding=0, ceil_mode=True)
-
-    self.inception3B = Inception(in_channels=256, num1x1=128, num3x3_reduce=128, num3x3=192, num5x5_reduce=32, num5x5=96, pool_proj=64)
 
     self.inception4A = Inception(in_channels=480, num1x1=192, num3x3_reduce=96, num3x3=208, num5x5_reduce=16, num5x5=48, pool_proj=64)
     self.inception4B = Inception(in_channels=512, num1x1=160, num3x3_reduce=112, num3x3=224, num5x5_reduce=24, num5x5=64, pool_proj=64)
