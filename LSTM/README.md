@@ -38,12 +38,14 @@ The internal operations are:
 
 **Forget Gate:**
 Decides what portion of the previous memory \( C_{t-1} \) should be forgotten.
+
 \[
 f_t = \sigma(W_f \cdot [h_{t-1}, x_t] + b_f)
 \]
 
 **Input Gate & Candidate Memory:**
 Determines what new information to add to memory.
+
 \[
 i_t = \sigma(W_i \cdot [h_{t-1}, x_t] + b_i)
 \]
@@ -53,12 +55,14 @@ i_t = \sigma(W_i \cdot [h_{t-1}, x_t] + b_i)
 
 **Cell State Update:**
 Blends the retained old memory and the new candidate.
+
 \[
 C_t = f_t \odot C_{t-1} + i_t \odot \tilde{C}_t
 \]
 
 **Output Gate:**
 Decides what the hidden state \( h_t \) should be (used for output and next step).
+
 \[
 o_t = \sigma(W_o \cdot [h_{t-1}, x_t] + b_o)
 \]
