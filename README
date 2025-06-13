@@ -4,5 +4,5 @@ a structured implementation library of foundational deep learning research paper
 ## what’s inside
 - `activations/` – ReLU and friends
 - `computer-vision/` – LeNet, AlexNet, VGG, ResNet, YOLO, UNet, etc.
-- `generative-models/` – GAN (for now)
+- `generative-models/` – GAN, VAE (for now)
 - `sequence-modeling/` – RNN, LSTM
